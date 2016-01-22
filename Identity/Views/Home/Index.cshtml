@@ -1,0 +1,53 @@
+﻿<div class="row" ng-controller="main">
+    <div class="col-sm-4">
+        <h3>Invoke API</h3>
+        <div class="form-group" ng-init="user = '@User.Identity.Name'">
+            <label>User: </label> {{ user }}
+        </div>
+        <div class="form-group">
+            <label>Result: </label>{{result}}
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default" ng-click="callAPI()">Call API</button>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <h3>Register</h3>
+        <div class="form-group">
+            <label>Email</label>
+            <input class="form-control" type="text" ng-model="new.Email" />
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input class="form-control" type="password" ng-model="new.Password" />
+        </div>
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input class="form-control" type="password" ng-model="new.ConfirmPassword" />
+        </div>
+        <div class="form-group">
+            <label>Role</label>
+            <select class="form-control" ng-model="new.Role">
+                <option ng-repeat="r in roles">{{r}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default" ng-click="register()">Register</button>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <h3>Log In</h3>
+        <div class="form-group">
+            <label>Email</label>
+            <input class="form-control" type="text" ng-model="login.email" />
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input class="form-control" type="password" ng-model="login.password" />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-default" ng-click="login()">Log In</button>
+            <button class="btn btn-default" ng-click="logout()">Log Out</button>
+        </div>
+    </div>
+</div>
